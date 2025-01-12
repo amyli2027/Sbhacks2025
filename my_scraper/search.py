@@ -65,21 +65,21 @@ def search_food2(partial_name):
     return results
 
 # Search for a specific food item
-search_results = search_food('Baked Potato(vgn)')
-search_results2 = search_food2('bac')
+# search_results = search_food('Baked Potato(vgn)')
+# search_results2 = search_food2('bac')
 
 # Display the results
-if search_results: #exact search
-    print("Food found in the following locations:")
-    for result in search_results:
-        print(f"- {result['food_item']} is available at {result['dining_hall']} during {result['meal_type']} in the {result['category']} section at {result['date']}.")
-else:
-    print("Food not found.")
+# if search_results: #exact search
+#     print("Food found in the following locations:")
+#     for result in search_results:
+#         print(f"- {result['food_item']} is available at {result['dining_hall']} during {result['meal_type']} in the {result['category']} section at {result['date']}.")
+# else:
+#     print("Food not found.")
 
-print("NEW SEARCH") #partial search
-if search_results2:
-    print("Food found in the following locations:")
-    for result in search_results2:
-        print(f"- {result['food_item']} is available at {result['dining_hall']} during {result['meal_type']} in the {result['category']} section at {result['date']}.")
-else:
-    print("Food not found.")
+# print("NEW SEARCH") #partial search
+# if search_results2:
+#     print("Food found in the following locations:")
+#     for result in search_results2:
+#         print(f"- {result['food_item']} is available at {result['dining_hall']} during {result['meal_type']} in the {result['category']} section at {result['date']}.")
+# else:
+#     print("Food not found.")

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Search Results for "{{ search_term }}"</h1>
+
+<h2>Exact Matches</h2>
+{% if exact_results %}
+<ul>
+    {% for result in exact_results %}
+    <li>
+        {{ result.food_item }} is available at {{ result.dining_hall }} during {{ result.meal_type }}
+        in the {{ result.category }} section on {{ result.date }}.
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No exact matches found.</p>
+{% endif %}
+
+<h2>Partial Matches</h2>
+{% if partial_results %}
+<ul>
+    {% for result in partial_results %}
+    <li>
+        {{ result.food_item }} is available at {{ result.dining_hall }} during {{ result.meal_type }}
+        in the {{ result.category }} section on {{ result.date }}.
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No partial matches found.</p>
+{% endif %}
+
+<a href="/">Search Again</a>
+{% endblock %}

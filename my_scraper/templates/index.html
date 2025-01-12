@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{%endblock%}
+
+{% block body %}
+<h1>Search for item</h1>
+<div class="topnav">
+    <!-- Add a form to handle the search input -->
+    <form action="/search" method="POST">
+        <input type="text" id="food" name="food" placeholder="Search..." required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+{%endblock%}
