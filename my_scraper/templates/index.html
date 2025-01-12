@@ -1,16 +1,42 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
-{%endblock%}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
 
 {% block body %}
-<h1>Search for item</h1>
-<div class="topnav">
+<h1 class="page-title">Search for Food Item</h1>
+<div class="form-container">
     <!-- Add a form to handle the search input -->
     <form action="/search" method="POST">
-        <input type="text" id="food" name="food" placeholder="Search..." required>
-        <button type="submit">Search</button>
+        <div class="form-group">
+            <input type="text" id="food" name="food" placeholder="Search..." required>
+        </div>
+
+        <div class="checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" name="dining_hall" value="Carrillo" {% if 'Carrillo' in selected_dining_halls
+                    %}checked{% endif %} class="dining-checkbox"> Carrillo
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="dining_hall" value="De La Guerra" {% if 'De La Guerra' in
+                    selected_dining_halls %}checked{% endif %} class="dining-checkbox"> De La Guerra (Dlg)
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="dining_hall" value="Ortega" {% if 'Ortega' in selected_dining_halls
+                    %}checked{% endif %} class="dining-checkbox"> Ortega
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="dining_hall" value="Portola" {% if 'Portola' in selected_dining_halls
+                    %}checked{% endif %} class="dining-checkbox"> Portola
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="dining_hall" value="All" {% if 'All' in selected_dining_halls %}checked{%
+                    endif %} id="all-checkbox"> All
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">Search</button>
     </form>
 </div>
-{%endblock%}
+{% endblock %}

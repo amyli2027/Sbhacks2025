@@ -40,7 +40,7 @@ class MenuSpider(scrapy.Spider):
                     continue
 
                 food_items = []
-                categories = meal_section.css('dl')
+                categories = meal_section.css('dl') 
 
                 for category in categories:
                     category_name = category.css('dt::text').get().strip()
